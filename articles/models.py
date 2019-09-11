@@ -16,6 +16,11 @@ class Article(models.Model):
     content = models.TextField()  # 클래스 변수 (DB의 필드)
     created_at = models.DateTimeField(auto_now_add=True) # 추가 때만 
     updated_at = models.DateTimeField(auto_now=True)  # 언제든지 
-
     def __str__(self):
         return f'{self.id}번 글 - {self.title}: {self.content}'
+
+class Student(models.Model):
+    name = models.CharField(max_length=10)
+    email = models.CharField(max_length=20)
+    birthday = models.DateField()
+    age = models.IntegerField()
